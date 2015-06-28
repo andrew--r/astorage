@@ -19,6 +19,10 @@
       return JSON.parse(ls.getItem(key));
     };
 
+    this.remove = function(key) {
+      ls.removeItem(key);
+    };
+
     this.clear = function() {
       ls.clear();
     };

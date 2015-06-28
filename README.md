@@ -30,7 +30,10 @@ s.set('users', users);
 s.get('users');
 > [{name: 'John Doe', age: 21}, {name: 'Alex Smith', age: 35}]
 
-// empty localStorage
+// remove item from localStorage
+s.remove('users');
+
+// or empty localStorage
 s.clear();
 
 // get localStorage items count
