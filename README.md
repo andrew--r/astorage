@@ -3,9 +3,6 @@ A tiny API wrapper for `localStorage` that lets you safely save numbers, arrays,
 
 ## Usage and API
 ```javascript
-// create instance of Astorage
-var s = new Astorage();
-
 // define some data
 var users = [
   {
@@ -19,24 +16,24 @@ var users = [
 ];
 
 // save data into localStorage.
-// API: set(key, value)
+// API: astorage.set(key, value)
 // key — string
 // value — string, number, array, object or anything else
-s.set('users', users); 
+astorage.set('users', users); 
 
 // get value from localStorage by key.
-// API: get(key)
+// API: astorage.get(key)
 // key — string
-s.get('users');
+astorage.get('users');
 > [{name: 'John Doe', age: 21}, {name: 'Alex Smith', age: 35}]
 
 // remove item from localStorage
-s.remove('users');
+astorage.remove('users');
 
 // or empty localStorage
-s.clear();
+astorage.clear();
 
 // get localStorage items count
-s.length
+astorage.length
 > 0
 ```

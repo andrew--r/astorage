@@ -2,7 +2,7 @@
  
   var ls = window.localStorage;
 
-  exports.Astorage = function () {
+  exports.astorage = new function () {
     if (!isLocalStorageAvailable()) {
       throw new Error('localStorage is not supported');
     }
@@ -26,12 +26,12 @@
     this.clear = function() {
       ls.clear();
     };
-  }
 
-  Astorage.prototype = {
-    get length() {
-      return ls.length;
-    }
+    this.__proto__ = {
+      get length() {
+        return ls.length;
+      }
+    };
   }
 
   function isLocalStorageAvailable () {
