@@ -1,45 +1,50 @@
-(function(exports) {
- 
-  var ls = window.localStorage;
+(function(w, l, j) {
 
-  exports.astorage = new function () {
-    if (!isLocalStorageAvailable()) {
-      throw new Error('localStorage is not supported');
-    }
+  var isLocalStorageAvailable,
+      isJsonParserAvailable,
+      messages;
 
-    this.set = function(key, value) {
+  messages = {
+    ls: 'localStorage is not available',
+    json: 'JSON is not available',
+    full: 'Data can\'t be saved because localStorage is full'
+  };
+
+  isLocalStorageAvailable = (l in w && w[l] != undefined);
+  isJsonParserAvailable = (j in w && w[j] != undefined);
+
+  if (!isLocalStorageAvailable) {
+    throw new Error(messages.ls);
+  }
+  if (!isJsonParserAvailable) {
+    throw new Error(messages.json);
+  }
+
+  w.astorage = {
+
+    set: function(key, value) {
       try {
-        ls.setItem(key, JSON.stringify(value));
+        w[l].setItem(key, w[j].stringify(value));
       } catch (e) {
-        console.warn("Data can't be saved because localStorage is full");
+        console.warn(messages.full);
       }
-    };
+    },
 
-    this.get = function(key) {
-      return JSON.parse(ls.getItem(key));
-    };
+    get: function(key) {
+      return w[j].parse(w[l].getItem(key));
+    },
 
-    this.remove = function(key) {
-      ls.removeItem(key);
-    };
+    remove: function(key) {
+      w[l].removeItem(key);
+    },
 
-    this.clear = function() {
-      ls.clear();
-    };
+    clear: function() {
+      w[l].clear();
+    },
 
-    this.__proto__ = {
-      get length() {
-        return ls.length;
-      }
-    };
-  }
-
-  function isLocalStorageAvailable () {
-    try {
-      return 'localStorage' in window && window['localStorage'] !== null;
-    } catch (e) {
-      return false;
+    get length() {
+      return w[l].length;
     }
-  }
- 
-})(this);
+  };
+
+})(window, 'localStorage', 'JSON');
