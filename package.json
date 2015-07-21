@@ -1,0 +1,26 @@
+{
+  "name": "astorage",
+  "version": "1.1.0",
+  "description": "A tiny API wrapper for localStorage that lets you safely save numbers, arrays, objects and other data types.",
+  "main": "astorage.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrew--r/astorage.git"
+  },
+  "keywords": [
+    "javascript",
+    "localstorage",
+    "html5",
+    "api",
+    "wrapper"
+  ],
+  "author": "Andrew Romanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrew--r/astorage/issues"
+  },
+  "homepage": "https://github.com/andrew--r/astorage"
+}

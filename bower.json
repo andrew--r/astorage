@@ -1,0 +1,26 @@
+{
+  "name": "astorage",
+  "main": "astorage.min.js",
+  "version": "1.1.0",
+  "homepage": "https://github.com/andrew--r/astorage",
+  "authors": [
+    { "name": "Andrew Romanov", "email": "scorpion21.97@gmail.com", "homepage": "http://andrew-r.ru" },
+    { "name": "Kiril Osiyuk" }
+  ],
+  "description": "A tiny API wrapper for localStorage that lets you safely save numbers, arrays, objects and other data types.",
+  "keywords": [
+    "javascript",
+    "localStorage",
+    "html5",
+    "api",
+    "wrapper"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
