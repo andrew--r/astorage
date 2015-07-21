@@ -1,6 +1,21 @@
 # ASTORAGE
 A tiny API wrapper for `localStorage` that lets you safely save numbers, arrays, objects and other data types.
 
+## Installation
+Astorage is available via npm or bower.
+
+```bash
+npm install astorage
+```
+
+or
+
+```bash
+bower install astorage
+```
+
+Otherwise you can directly [download zip](https://github.com/andrew--r/astorage/archive/master.zip).
+
 ## Usage and API
 ```javascript
 // define some data
